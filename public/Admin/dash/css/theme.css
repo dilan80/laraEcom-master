@@ -14649,3 +14649,8 @@ section {
 .vue-lists ul, .vue-lists ol {
     padding-left: 30px;
 }
+
+.datatable{
+    width: 100%;
+    padding: 17px;
+}
