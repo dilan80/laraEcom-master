@@ -26,7 +26,8 @@ Route::post('/admin-dashboard','adminController@dashboard' );
 
 //admin-content
 Route::get('/all-category','categoryController@all_cat');
-Route::get('/all-user','categoryController@all_user');
+Route::get('/all-user','userController@all_user');
+//Route::get('/all-user','userController@get_data');
 
 
 

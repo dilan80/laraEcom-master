@@ -13,7 +13,9 @@
     <meta name="keywords" content="au theme template">
 
     <!-- Title Page-->
-    <title>Dashboard</title>
+    <title>
+        @yield('title')
+    </title>
 
     <!-- Fontfaces CSS-->
     <link href="{{asset('admin/dash/css/font-face.css')}}" rel="stylesheet" media="all">

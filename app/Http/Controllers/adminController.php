@@ -14,6 +14,7 @@ session_start();
 class adminController extends Controller
 {
    public function index(){
+
        return view('admin_login');
    }
 

@@ -1,4 +1,5 @@
 @extends('admin_layout')
+@section('title','Dashboard')
 
 @section('mobileView')
 <header class="header-mobile d-block d-lg-none">
