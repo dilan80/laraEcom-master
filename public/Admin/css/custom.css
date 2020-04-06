@@ -1,0 +1,16 @@
+#logoId {
+    width: min-content;
+    background-color: black;
+}
+
+.make-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.center {
+    align-items: center;
+    justify-items: center;
+    animation: infinite;
+}
