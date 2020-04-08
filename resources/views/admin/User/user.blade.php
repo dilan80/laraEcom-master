@@ -81,10 +81,14 @@
 
 
 @section('table')
-<div class="row">
-                <div class="datatable">
-                    <div class="table-responsive table--no-card m-b-40">
-                        <table class="table table-borderless table-striped table-earning">
+
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
+  Launch static backdrop modal
+</button>
+     <div class="row">
+        <div class="datatable">
+             <div class="table-responsive table--no-card m-b-40">
+                 <table class="table table-borderless table-striped table-earning">
                             <thead>
                                 <tr>
                                     <th>User Id</th>
@@ -95,14 +99,45 @@
                             </thead>
                             <tbody>
                                 @foreach($result as $u)
-                                <tr>
-                                    <td>{{$u->adm_id}}</td>
-                                    <td>{{$u->username}}</td>
-                                    <td>{{$u->email}}</td>
-                                </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+                            <tr>
+                                <td>{{$u->adm_id}}</td>
+                                <td>{{$u->username}}</td>
+                                <td>{{$u->email}}</td>
+                                <td>
+                                <button type="button" class="btn btn-primary" style="padding:5px;"data-toggle="modal" data-target="#staticBackdrop"><i class="far fa-eye"></i></button>
+                                <button type="button" class="btn btn-success"style="padding:5px;"><i class="fas fa-edit"></i></button>
+                                <button type="button" class="btn btn-danger"style="padding:5px;"><i class="far fa-trash-alt"></i></button>
+                                </td>
+                            </tr>
+                         @endforeach
+                    </tbody>
+                </table>
+            </div>
+         </div>
+     </div>
+
+     <!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Understood</button>
+      </div>
+    </div>
+  </div>
+</div>
 @endsection
+
