@@ -12,7 +12,7 @@ class userController extends Controller
         if(count($result)> 0){
 
 
-            return view('admin.User.user',$result);
+            return view('admin.user',$result);
 
      }
 
