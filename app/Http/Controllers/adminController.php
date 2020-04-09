@@ -42,4 +42,6 @@ class adminController extends Controller
                     return redirect('/admin-side');
                   }
    }
+
+
 }
