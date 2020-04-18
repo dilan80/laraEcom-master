@@ -52,7 +52,7 @@ class userController extends Controller
             $username = $request->input("inputusername");
             $first_name = $request->input('inputfirstname');
             $last_name = $request->input('inputlastname');
-            $password = $request->input("password");
+            $password = md5($request->input("password"));
             $email = $request->input("inputemail");
             $nic = "hj";
             $data=array('username'=>$username,'first_name'=>$first_name,"last_name"=>$last_name,"password"=>$password,"email"=>$email,"nic"=>$nic);
