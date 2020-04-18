@@ -110,8 +110,8 @@
                         <td>{{$u->username}}</td>
                         <td>{{$u->email}}</td>
                         <td>
-                        <button type="button" class="btn btn-primary"><i class="far fa-eye"></i></button>
-                        <button type="button" class="btn btn-success"><i class="fas fa-edit"></i></button>
+                        <button type="button" class="btn btn-primary"data-toggle="modal" data-target="#useraddModal"><i class="far fa-eye"></i></button>
+                        <button type="button" class="btn btn-success"data-toggle="modal" data-target="#useraddModal"><i class="fas fa-edit"></i></button>
                         <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
                         </td>
                     </tr>
@@ -122,63 +122,77 @@
     </div>
  </div>
 
-                <!-- Button trigger modal -->
-                <div> </div>
+ @endsection             <!-- Button trigger modal -->
+
 
 
 <!-- Modal -->
 <div class="modal fade" id="useraddModal" tabindex="-1" role="dialog" aria-labelledby="useraddModal" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
+    @if (count($errors) >0)
+        <div class="alert alert-danger">
+            <ul>
+            @foreach($errors->all() as $error)
+                <li>{{$error}}</li>
+            @endforeach
+            </ul>
+        </div>
+        @endif
       <div class="modal-header">
         <h5 class="modal-title" id="useraddModal">Create New USer</h5>
+
+
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
+      <form action="{{url('/store')}}" method="POST">
+            {{csrf_field()}}
       <div class="modal-body">
-            <form action="{{'userController@add_User'}}" method="POST">
+
                 <div class="form-row">
                     <div class="form-group col-md-6">
                     <label for="inputFirstname">First Name</label>
-                    <input type="text" class="form-control" id="inputfirstname">
+                    <input type="text" class="form-control" name="inputfirstname">
                     </div>
                     <div class="form-group col-md-6">
                     <label for="inputLastname">Last Name</label>
-                    <input type="text" class="form-control" id="inputlastname">
+                    <input type="text" class="form-control" name="inputlastname">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="inputAddress">Address</label>
-                    <input type="text" class="form-control" id="inputaddress" placeholder="">
+                    <input type="text" class="form-control" name="inputaddress" placeholder="">
                 </div>
                 <div class="form-group">
                     <label for="inputEmail">E-mail</label>
-                    <input type="email" class="form-control" id="inputemail" placeholder="">
+                    <input type="email" class="form-control" name="inputemail" placeholder="">
                 </div>
                 <div class="form-group">
                     <label for="inputUsername">User Name</label>
-                    <input type="text" class="form-control" id="inputusername">
+                    <input type="text" class="form-control" name="inputusername">
                 </div>
 
                 <div class="form-group">
                     <label for="inputPassword">Password</label>
-                    <input type="password" class="form-control" id="password">
+                    <input type="password" class="form-control" name="password">
                 </div>
 
 
                 <div class="form-group">
                     <label for="inputConfirmpassword">Re-Enter Password</label>
-                    <input type="password" class="form-control" id="confirmpassword">
+                    <input type="password" class="form-control" name="confirmpassword">
                 </div>
-
-
-      </div>
-      <div class="modal-footer">
+                <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         <button type="submit" class="btn btn-primary">Save changes</button>
       </div>
+
+
+      </div>
+      </form>
+
     </div>
   </div>
 </div>
-@endsection

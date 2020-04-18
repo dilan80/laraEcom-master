@@ -27,7 +27,7 @@ Route::post('/admin-dashboard','adminController@dashboard' );
 //admin-content
 Route::get('/all-category','categoryController@index');
 Route::get('/all-user','userController@index');
-Route::post('/all-user','adminController@add_user');
+Route::resource('/all-user','userController');
 
-
+Route::post('/store','userController@store' );
 
